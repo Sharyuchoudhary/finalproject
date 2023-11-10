@@ -1,95 +1,243 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client' 
 
-export default function Home() {
+// import React, { useEffect, useState } from 'react';
+
+// export default function Homepage() {
+//   const [User, setUser] = useState({ username: '', number: '', email: '', password: '' });
+//   const [passworderror , Setpassworderror] = useState('')  ; 
+//   const [servermessage , Setservermessage] = useState('') ;
+//   const [buttondisabled , Setbuttondisabled] = useState() ; 
+
+
+
+// async function handleSubmit()
+// {
+
+// try {
+//     const response = await fetch('/api/users/signup' , 
+//     {
+//       method: 'POST', // Assuming this is a user registration endpoint
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(User),
+//     });
+    
+//   const data =await response.json()
+// console.log(data);
+
+//     if(data.success)
+//     {
+
+//       Setpassworderror('');
+//       Setservermessage(data.message);
+
+//     }
+//     else
+//     {
+//       Setservermessage(data.message);
+//     }
+
+// } catch (error) {
+//     console.log("User Registration Failed " , error);
+// }
+
+
+
+
+
+// }
+
+//   const handleChange = (e) => {
+    
+// const {name , value} = e.target ; 
+// setUser((prevUser)=>({
+// ...prevUser , [name] :value , 
+// }))
+
+//   };
+
+
+// useEffect(()=>{ 
+
+// if(User.password.length>0 && User.password.length < 6)
+// {
+
+//     Setpassworderror('The Password Should Be Atleast 6 Characters Long ') ; 
+//    Setbuttondisabled(false)
+// }
+// else
+// {
+
+// Setpassworderror('') ; 
+// Setbuttondisabled(true)
+// }
+
+
+
+//  } , [User.password])
+
+
+
+
+
+//   return (
+//     <div>
+//       <h1>HOME PAGE!</h1>
+   
+//         <input
+//           name="username"
+//           type="text"
+//           value={User.username}
+//           placeholder="Enter FullName"
+//           onChange={handleChange}
+//         />
+//         <input
+//           name="number"
+//           type="text"
+//           value={User.number}
+//           placeholder="Enter Number"
+//           onChange={handleChange}
+//         />
+//         <input
+//           name="email"
+//           type="email"
+//           value={User.email}
+//           placeholder="Enter Email"
+//           onChange={handleChange}
+//         />
+//         <input
+//           name="password"
+//           type="password"
+//           value={User.password}
+//           placeholder="Enter Password"
+//           onChange={handleChange}
+//         />
+//         {passworderror && <p style={{ color: 'red' }}>{passworderror}</p>}
+// {servermessage && <p style={{ color: 'red' }}>{servermessage}</p>}
+
+
+
+//         <button  onClick={handleSubmit}>{buttondisabled? " SIGNUP" : "NO SIGNUP"}</button>
+      
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Homepage.js
+
+// Import the CSS module
+import styles from './page.module.css';
+
+import React, { useEffect, useState } from 'react';
+
+export default function Homepage() {
+  const [User, setUser] = useState({ username: '', number: '', email: '', password: '' });
+  const [passwordError, setPasswordError] = useState('');
+  const [serverMessage, setServerMessage] = useState('');
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
+  };
+
+  useEffect(() => {
+    if (User.password.length < 6) {
+      setPasswordError('The Password Should Be At Least 6 Characters Long');
+      setButtonDisabled(true);
+    } 
+    else {
+      setPasswordError('');
+      setButtonDisabled(false);
+    }
+  }, [User.password]);
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/users/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(User),
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (data.success) {
+        setPasswordError('');
+        setServerMessage(data.message);
+      } else {
+        setServerMessage(data.message);
+      }
+    } catch (error) {
+      console.error('User Registration Failed ', error);
+    }
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <div className={styles.container}>
+      <h1 className={styles.title}>Sign Up</h1>
+      <input
+        className={styles.input}
+        name="username"
+        type="text"
+        value={User.username}
+        placeholder="Enter Full Name"
+        onChange={handleChange}
+      />
+      <input
+        className={styles.input}
+        name="number"
+        type="text"
+        value={User.number}
+        placeholder="Enter Phone Number"
+        onChange={handleChange}
+      />
+      <input
+        className={styles.input}
+        name="email"
+        type="email"
+        value={User.email}
+        placeholder="Enter Email"
+        onChange={handleChange}
+      />
+      <input
+        className={styles.input}
+        name="password"
+        type="password"
+        value={User.password}
+        placeholder="Enter Password"
+        onChange={handleChange}
+      />
+      {passwordError && <p className={styles.error}>{passwordError}</p>}
+      {serverMessage && <p className={styles.error}>{serverMessage}</p>}
+      <button
+        className={buttonDisabled ? styles.buttonDisabled : styles.button}
+        onClick={handleSubmit}
+        disabled={buttonDisabled}
+      >
+        {buttonDisabled ? 'NO SIGNUP' : 'SIGNUP'}
+      </button>
+    </div>
+  );
 }
