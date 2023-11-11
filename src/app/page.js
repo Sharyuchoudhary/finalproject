@@ -153,6 +153,7 @@ export default function Homepage() {
   const [passwordError, setPasswordError] = useState('');
   const [serverMessage, setServerMessage] = useState('');
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [evm , setevm] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -186,6 +187,7 @@ export default function Homepage() {
       if (data.success) {
         setPasswordError('');
         setServerMessage(data.message);
+        setevm(true)
       } else {
         setServerMessage(data.message);
       }
@@ -231,6 +233,7 @@ export default function Homepage() {
       />
       {passwordError && <p className={styles.error}>{passwordError}</p>}
       {serverMessage && <p className={styles.error}>{serverMessage}</p>}
+      {evm && <p className={styles.error}>Check Email for Verification and Login !</p>}
       <button
         className={buttonDisabled ? styles.buttonDisabled : styles.button}
         onClick={handleSubmit}

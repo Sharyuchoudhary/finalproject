@@ -2,6 +2,7 @@ import { User } from "@/models/usermodel";
 import Connect from "@/lib/dbconn";
 import { NextResponse } from "next/server";
 import bcryptjs from "bcryptjs" ;
+import { sendemail } from "@/app/helpers/mailer";
 
 
 export async function POST(request)
@@ -53,6 +54,18 @@ const SavedUser = await User.create({
 })
 
 console.log("The SavedUser is",SavedUser);
+
+if (SavedUser) {
+
+  await sendemail(email ,"VERIFY", SavedUser._id)
+}
+
+else 
+{
+
+log("Email Couldn't be send !")
+}
+
 
 return NextResponse.json({
 
