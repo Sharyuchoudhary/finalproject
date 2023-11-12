@@ -1,0 +1,48 @@
+/* loginpage.css */
+
+/* Container styling */
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input styling */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #3897f0;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #ed4956;
+    margin-top: 10px;
+  }
+  
+  /* Additional styling for a centered layout */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fafafa;
+  }
+  

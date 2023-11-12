@@ -161,7 +161,7 @@ export default function Homepage() {
   };
 
   useEffect(() => {
-    if (User.password.length < 6) {
+    if (User.password.length < 6 && User.password.length >0 ) {
       setPasswordError('The Password Should Be At Least 6 Characters Long');
       setButtonDisabled(true);
     } 
@@ -241,6 +241,9 @@ export default function Homepage() {
       >
         {buttonDisabled ? 'NO SIGNUP' : 'SIGNUP'}
       </button>
+
+
+      
     </div>
   );
 }
