@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 export default function CourseManagement() {
 
   const [message, setMessage] = useState('');
-
+  
   const [formData, setFormData] = useState({
     courseName: '',
     instructor: '',
@@ -33,7 +33,7 @@ export default function CourseManagement() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body:formData , 
       });
 
      
@@ -52,11 +52,11 @@ export default function CourseManagement() {
         startDate: '',
         endDate: '',
         description: '',
-  
+     
       });
     } catch (error) {
       console.error('Error during fetch:', error);
-      // Handle error or show an error message to the user
+     
     }
   };
 
@@ -113,7 +113,6 @@ export default function CourseManagement() {
           required
         />
 
-       
         {message}
         <button type="submit">Register Course</button>
       </form>
