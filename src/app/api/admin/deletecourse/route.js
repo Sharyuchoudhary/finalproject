@@ -1,21 +1,19 @@
-// route.js file
 
 import { NextResponse } from "next/server";
-import { User } from "@/models/usermodel";
-
+import { Course } from "@/models/CourseModel";
 
 export async function DELETE(request) {
  
  
 
   try {
-    const { userId } = await request.json();
+    const { CourseId } = await request.json();
 
     
 
-    const deletedUser = await User.findByIdAndDelete(userId);
+    const deletedCourse = await Course.findByIdAndDelete(CourseId);
 
-    if (!deletedUser) {
+    if (!deletedCourse) {
       return NextResponse.json({message:"UNSUCCESSFULL",})
     }
    

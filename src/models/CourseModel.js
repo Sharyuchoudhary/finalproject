@@ -1,6 +1,7 @@
-// Assuming you have a mongoose model file, e.g., CourseModel.js
+// Import mongoose
 import mongoose from "mongoose";
 
+// Define the course schema
 const courseSchema = new mongoose.Schema({
   courseName: {
     type: String,
@@ -22,11 +23,21 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  courseImage: {
-    type: Buffer, // Assuming you store the image as a Buffer in MongoDB
+  imageURL: {
+    type: String, // Assuming the image reference is a URL or file path
+    required: true,
+  },
+  subDescription: {
+    type: String, // Add subDescription field
+    required: true , // Adjust as needed based on your requirements
+  },
+  category: {
+    type: String, // Add category field
+    required: true, // Adjust as needed based on your requirements
   },
 });
 
-const Course = mongoose.models.Course ||mongoose.model('Course', courseSchema);
+// Create the Course model
+export const Course = mongoose.models.Course || mongoose.model('Course', courseSchema);
 
-module.exports = Course;
+
