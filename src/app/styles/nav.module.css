@@ -1,0 +1,93 @@
+.nav {
+  background-color: #f4f4f4; /* Background color */
+  display: flex;
+  justify-content: center; /* Center align items horizontally */
+  padding: 30px 0px; /* Add some vertical padding for spacing */
+  border-radius: 100px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Center align items vertically */
+}
+
+.nav li {
+  margin-right: 50px;
+  font-size: 16px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav a:hover {
+  color:  #CC6A4F;
+}
+
+
+
+
+
+
+
+
+/* nav.module.css */
+
+.nav {
+  /* Your main navigation styles */
+}
+
+.navList {
+  /* Your navigation list styles */
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.navList li {
+  margin-right: 15px;
+}
+
+/* Add the following styles for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownContent a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}

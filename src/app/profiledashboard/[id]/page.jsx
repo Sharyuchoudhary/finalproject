@@ -6,21 +6,7 @@ export default function Profilepage({ params }) {
   const router = useRouter();
   const [responsedata, setResponsedata] = useState(null);
 
-  const handlelogout = async () => {
-    try {
-      const response = await fetch('/api/users/logout', { method: 'GET' });
-
-      if (response.status === 200) {
-        router.push('/LOGIN');
-        console.log('Success Logout!');
-      } else {
-        console.log('BAD RESPONSE logout ROUTE!');
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -101,20 +87,7 @@ export default function Profilepage({ params }) {
           Number: {responsedata?.[0]?.number || 'N/A'}
         </p>
       </div>
-      <button
-        style={{
-          padding: '15px',
-          fontSize: '18px',
-          background: '#3f6a8e', // MongoDB Atlas blue
-          color: '#fff',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer',
-        }}
-        onClick={handlelogout}
-      >
-        LOGOUT
-      </button>
+      
     </div>
   );
   

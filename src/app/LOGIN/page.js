@@ -74,8 +74,8 @@ export default function Loginpage() {
       setservermsg(message);
       if (status === 200) {
         Cookies.set('token', token, { expires: 1 });
-        
-        router.push('/profiledashboard');
+
+        router.push('/userhome');
       } else {
         console.log('No Cookie Generated!');
       }
