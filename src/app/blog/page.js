@@ -5,7 +5,7 @@ import { useState , useEffect } from "react";
 import styles from "@/app/styles/common.module.css"
 
 
-export default function page() {
+export default function Page() {
 
 const [dataresponse , setdataresponse] = useState([])
 useEffect (()=>{

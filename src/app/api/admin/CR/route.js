@@ -1,7 +1,7 @@
 // Import necessary modules
 import Connect from "@/lib/dbconn";
 import { NextResponse } from "next/server";
-import Course from "@/models/CourseModel";
+import {Course} from "@/models/CourseModel";
 
 export async function POST(req) {
   try {
