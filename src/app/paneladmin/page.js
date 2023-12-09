@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import pastyles from "src\\app\\paneladmin\\pa.module.css";
+import pastyles from "src/app/paneladmin/pa.module.css";
 
 export default function AdminPage() {
   const router = useRouter();
