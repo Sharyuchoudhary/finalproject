@@ -2,7 +2,7 @@
 import UserCard from "@/app/components/UserCard";
 import { useEffect, useState } from "react";
 
-export default function userm() {
+export default function Userm() {
   const [data, Setdata] = useState();
 
   async function fetchdata() {
