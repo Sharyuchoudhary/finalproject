@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-export default async function (request) 
+export default async function getdatafromtoken (request) 
 {
 
     try {

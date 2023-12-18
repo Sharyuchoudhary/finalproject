@@ -17,8 +17,7 @@ const router = useRouter();
 
     const responsedata = await response.json();
  
-
-    if (responsedata.isAdmin) {
+    if (responsedata[0].isAdmin) {
       setisadmin(true);
     }
   }
@@ -48,15 +47,21 @@ const router = useRouter();
     <nav className={styles.nav}>
       <ul className={styles.navList}>
 
-        <li><Link href="/courses">COURSES</Link></li>
-        <li><Link href="/form">REGISTER FORM</Link></li>
-        <li><Link href="/gallery">GALLERY</Link></li>
 
-        <li><Link href="/blog">BLOGS</Link></li>
-        <li><Link href="/contacts">CONTACT US</Link></li>
+
+        { isadmin ? "" :<li><Link href="/courses">COURSES</Link></li>}
+
+        { isadmin ? "" :<li><Link href="/blog">BLOGS</Link></li>}
+
+         { isadmin ? <li><Link href="/paneladmin">PANEL</Link></li> :<li><Link href="/contacts">CONTACT US</Link></li>}
 
         {isadmin ? (
-         ""
+         <li className={styles.dropdown}>
+         <button className={styles.dropbtn}>ADMIN</button>
+         <div className={styles.dropdownContent}>
+           <Link href="" onClick={handlelogout}>Logout</Link>
+         </div>
+       </li>
         ) : (
           <li className={styles.dropdown}>
             <button className={styles.dropbtn}>PROFILE</button>

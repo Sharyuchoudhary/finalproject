@@ -35,6 +35,7 @@ const courseSchema = new mongoose.Schema({
     type: String, // Add category field
     required: true, // Adjust as needed based on your requirements
   },
+  createdat : Date ,
 });
 
 // Create the Course model

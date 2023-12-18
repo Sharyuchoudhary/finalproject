@@ -1,0 +1,40 @@
+.maindiv
+{
+
+    background: rgb(200,238,190);
+    background: linear-gradient(90deg, rgba(200,238,190,1) 0%, rgba(144,233,173,1) 67%, rgba(190,190,214,1) 100%);
+    text-align: center;
+    height:max-content ;
+border-radius: 15%;
+height: 350px;
+}
+.sdiv{
+
+
+margin: 30px;
+
+
+}
+
+.slick-slide > div {
+
+
+margin : 0 40px ; 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -41,7 +41,7 @@ if(!user)
       };
       
       const token = jwt.sign(tokenData, 'finalproject', { expiresIn: "1d" });
-      console.log("JWT generated:", token); // Log the generated JWT
+      
 
 
 
