@@ -68,7 +68,7 @@ const router = useRouter();
             <div className={styles.dropdownContent}>
               <Link href="/profiledashboard">View Profile</Link>
               <Link href="/yourcourses">Your Courses</Link>
-              <Link href="/favouritecourses">Favorite Courses</Link>
+              <Link href="/favcourse">Favorite Courses</Link>
               <Link href="" onClick={handlelogout}>Logout</Link>
             </div>
           </li>

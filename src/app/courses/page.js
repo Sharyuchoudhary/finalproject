@@ -53,9 +53,6 @@ async function getcoursesdata(){
 
     const data = await response.json();
    const {d1 , d2 , d3 , d4} = data ; 
-
-console.log(d3);
-
    setStateD1(d1)
    setStateD2(d2)
    setStateD3(d3)
@@ -64,6 +61,26 @@ console.log(d3);
   } catch (error) {
     console.log(error);
   }
+
+
+
+
+
+}
+
+
+
+async function addtofav(value)
+{
+
+const response = await fetch('/api/users/atfav' , 
+{
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({value}),
+});
 
 
 
@@ -102,7 +119,7 @@ console.log(d3);
     autoplaySpeed: 3000, // Adjust the speed in milliseconds
   };
   
-  console.log(stateD3);
+  
   return (
     <div>
       <Welcomeuser username={name} />
@@ -118,6 +135,7 @@ console.log(d3);
             <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
             <p>{course.subDescription}</p>
             <p>Instructor: {course.instructor}</p>
+            <button  onClick={() => addtofav(course._id)}>LIKE</button>
           </div>
         ))}
       </Slider>
@@ -135,6 +153,7 @@ console.log(d3);
             <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
             <p>{course.subDescription}</p>
             <p>Instructor: {course.instructor}</p>
+            <button  onClick={() => addtofav(course._id)}>LIKE</button>
           </div>
         ))}
       </Slider>
@@ -158,6 +177,7 @@ console.log(d3);
             <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
             <p>{course.subDescription}</p>
             <p>Instructor: {course.instructor}</p>
+            <button  onClick={() => addtofav(course._id)}>LIKE</button>
           </div>
         ))}
       </Slider>
@@ -180,6 +200,7 @@ console.log(d3);
             <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
             <p>{course.subDescription}</p>
             <p>Instructor: {course.instructor}</p>
+            <button  onClick={() => addtofav(course._id)}>LIKE</button>
           </div>
         ))}
       </Slider>
@@ -202,6 +223,7 @@ console.log(d3);
             <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
             <p>{course.subDescription}</p>
             <p>Instructor: {course.instructor}</p>
+            <button  onClick={() => addtofav(course._id)}>LIKE</button>
           </div>
         ))}
       </Slider>
