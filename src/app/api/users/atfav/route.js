@@ -63,3 +63,35 @@ export async function GET(request) {
         return NextResponse.json({ msg: "Error fetching data" });
     }
 }
+
+// pages/api/users/atfav/[id].js
+
+export async function DELETE(request) {
+   
+    try {
+    await Connect();
+    
+
+    const userId = await getdatafromtoken(request);
+
+  
+    const { id } = await request.json();
+  
+    const user = await User.findOne({ _id: userId });
+   
+
+    if (!user) {
+      return NextResponse.json({ msg: 'User not found.' }, 404);
+    }
+
+    // Assuming clickedIds is an array of favorite course IDs
+    user.clickedIds = user.clickedIds.filter((courseId) => courseId.toString() !== id);
+
+    await user.save();
+
+    return NextResponse.json({ msg: 'Favorite course deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting favorite course:', error);
+    return NextResponse.json({ msg: 'Failed to delete favorite course.' }, 500);
+  }
+}

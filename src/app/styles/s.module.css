@@ -54,7 +54,7 @@ border: 1px solid #050202;
 
 border-radius: 15px;
 border-width: 3px;
-height: 350px ;
+height: 400px ;
 width: 300px;
 margin: 10px 30px 40px 130px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -81,4 +81,10 @@ margin: 25px;
 margin: 140px 290px 140px 580px;
 
 
+}
+
+.del{
+
+
+    margin-top: 20px;
 }

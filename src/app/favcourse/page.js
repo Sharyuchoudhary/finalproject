@@ -31,6 +31,35 @@ const FavCoursePage = ({ name }) => {
     fetchData();
   }, []);
 
+  async function deleteFavCourse(id) {
+    try {
+      const response = await fetch('/api/users/atfav', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: id }),
+      });
+      
+  
+      if (response.ok) {
+        console.log('Favorite course deleted successfully.');
+        // Update the state or fetch favorite courses again if needed
+        fetchData();
+      } else {
+        console.error('Failed to delete favorite course.');
+      }
+    } catch (error) {
+      console.error('Error deleting favorite course:', error);
+    }
+  }
+  
+
+
+
+
+
+
   return (
 
     
@@ -51,6 +80,15 @@ return <div className={s.cdiv} key={course._id}>
             <p>Instructor: {course.instructor}</p>
       
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
+
+<div className={s.del}> 
+
+
+
+<Image src={'/t.png'} width={20} height={20} alt="Delete Icon" onClick={() => deleteFavCourse(course._id)} />
+
+ 
+ </div>
 
 
 </div>
