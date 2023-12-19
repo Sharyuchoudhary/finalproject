@@ -5,6 +5,7 @@
 import { useEffect, useState } from 'react';
 import s from "@/app/styles/s.module.css"
 import Image from 'next/image';
+import Link from 'next/link'
 
 const FavCoursePage = ({ name }) => {
   const [favCourses, setFavCourses] = useState([]);
@@ -64,7 +65,12 @@ const FavCoursePage = ({ name }) => {
 
     
     <div className={s.maindiv} >
-     <div className={s.h}> <h1>Your Favorite Courses</h1> <hr/></div>
+   
+     <div className={s.h}> <h1>Your Favorite Courses</h1> <hr/>
+     
+    <Link href="/courses"><Image className={s.i} src={"/hh.png"} width={30} height={30} alt='delet text' />
+     </Link> 
+     </div>
    
       
         {favCourses.map((course) =>{

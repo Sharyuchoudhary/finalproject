@@ -9,7 +9,8 @@ return (
 
 <div>
 
-<h1> Welcome {props.username} </h1>
+<h1> Welcome  {props.username} ! </h1>
+<p> Checkout Our Courses </p>
 
 </div>
 

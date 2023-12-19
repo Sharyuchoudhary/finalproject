@@ -49,7 +49,8 @@ width: 50%;
 
       .cdiv{
 
-background-image: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); 
+/* background-image: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);  */
+background-image: linear-gradient(to right top, #ffffff, #f7f1ff, #f5e1ff, #f8cfff, #ffbcfa);
 border: 1px solid #050202;
 
 border-radius: 15px;
@@ -88,3 +89,45 @@ margin: 140px 290px 140px 580px;
 
     margin-top: 20px;
 }
+
+.i{
+
+margin-left: 150px;
+margin-top: 30px;
+}
+
+
+.head{
+
+
+margin :200px 0px 300px 0px;
+text-align: center;
+
+}
+
+.head h1{
+
+font-size: 3.5rem;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-weight: 400;
+
+}
+
+.head p{
+
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    
+    }
+
+
+ 
+.l {
+    background-image: linear-gradient(to right top, #cc95f7, #ffa0c7, #ffc3b2, #fce6c8, #fcfff6);
+  }
+  
+
+
+   

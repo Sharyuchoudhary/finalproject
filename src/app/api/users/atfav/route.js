@@ -64,7 +64,7 @@ export async function GET(request) {
     }
 }
 
-// pages/api/users/atfav/[id].js
+
 
 export async function DELETE(request) {
    
