@@ -1,7 +1,7 @@
 'use client' 
 
 import styles from './page.module.css';
-
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 export default function Homepage() {
@@ -10,6 +10,8 @@ export default function Homepage() {
   const [serverMessage, setServerMessage] = useState('');
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [evm , setevm] = useState(false)
+
+    const router = useRouter() 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,12 +40,13 @@ export default function Homepage() {
       });
 
       const data = await response.json();
-      console.log(data);
-
+   
       if (data.success) {
         setPasswordError('');
         setServerMessage(data.message);
         setevm(true)
+        router.push('/LOGIN')
+        
       } else {
         setServerMessage(data.message);
       }

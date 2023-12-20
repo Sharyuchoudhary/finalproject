@@ -53,18 +53,18 @@ const SavedUser = await User.create({
  password:hashedpassword , 
 })
 
-console.log("The SavedUser is",SavedUser);
 
-if (SavedUser) {
 
-  await sendemail(email ,"VERIFY", SavedUser._id)
-}
+// if (SavedUser) {
 
-else 
-{
+//   await sendemail(email ,"VERIFY", SavedUser._id)
+// }
 
-log("Email Couldn't be send !")
-}
+// else 
+// {
+
+// log("Email Couldn't be send !")
+// }
 
 
 return NextResponse.json({
