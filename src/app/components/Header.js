@@ -17,9 +17,14 @@ const router = useRouter();
 
     const responsedata = await response.json();
  
-    if (responsedata[0].isAdmin) {
+    // if (responsedata[0].isAdmin) {
+    //   setisadmin(true);
+    // }
+
+    if (responsedata[0] && responsedata[0].isAdmin) {
       setisadmin(true);
     }
+    
   }
 
   useEffect(() => {
