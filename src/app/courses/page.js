@@ -5,7 +5,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Welcomeuser from '../components/Welcomeuser';
-import styles from "src/app/styles/coursecard.module.css"
+import Link from 'next/link'
+
 import Image from 'next/image'
 
 
@@ -51,7 +52,7 @@ export default function CoursePage() {
     }
   }
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
 async function getcoursesdata(){
 
   try {
@@ -131,127 +132,8 @@ const response = await fetch('/api/users/atfav' ,
   return (
     <div>
 
-      <div className={s.head}> <Welcomeuser username={name} /></div>
+<div className={s.head}> <Welcomeuser username={name} /></div>
       
-{/* 
-<div className={styles.sdiv}>
-<h1>POPULAR COURSES</h1>
-<Slider {...settings}>
-        {array.map((course, index) => (
-
-          <div key={index} className={styles.maindiv}>
-            <h4>{course.courseName}</h4>
-            <p>Start Date: {new Date(course.startDate).toLocaleDateString()}</p>
-            <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
-            <p>{course.subDescription}</p>
-            <p>Instructor: {course.instructor}</p>
-            <button  onClick={() => addtofav(course._id)}>LIKE</button>
-          </div>
-        ))}
-      </Slider>
-
-</div>
-      
-<div className={styles.sdiv}>
-<h1>APP DEVELOPEMENT</h1>
-  <Slider {...settings1}>
-        {stateD3.map((course) => (
-
-          <div key={course._id} className={styles.maindiv}>
-            <h4>{course.courseName}</h4>
-            <p>Start Date: {new Date(course.startDate).toLocaleDateString()}</p>
-            <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
-            <p>{course.subDescription}</p>
-            <p>Instructor: {course.instructor}</p>
-            <button  onClick={() => addtofav(course._id)}>LIKE</button>
-          </div>
-        ))}
-      </Slider>
- 
-
-
-
-</div>
-
-
-
-    
-<div className={styles.sdiv}>
-<h1> DATA SCIENCE </h1>
-  <Slider {...settings1}>
-        {stateD1.map((course) => (
-
-          <div key={course._id} className={styles.maindiv}>
-            <h4>{course.courseName}</h4>
-            <p>Start Date: {new Date(course.startDate).toLocaleDateString()}</p>
-            <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
-            <p>{course.subDescription}</p>
-            <p>Instructor: {course.instructor}</p>
-            <button  onClick={() => addtofav(course._id)}>LIKE</button>
-          </div>
-        ))}
-      </Slider>
- 
-
-
-
-</div>
-
-
-    
-<div className={styles.sdiv}>
-<h1>FULL STACK WEBDEVELOPEMENT</h1>
-  <Slider {...settings1}>
-        {stateD4.map((course) => (
-
-          <div key={course._id} className={styles.maindiv}>
-            <h4>{course.courseName}</h4>
-            <p>Start Date: {new Date(course.startDate).toLocaleDateString()}</p>
-            <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
-            <p>{course.subDescription}</p>
-            <p>Instructor: {course.instructor}</p>
-            <button  onClick={() => addtofav(course._id)}>LIKE</button>
-          </div>
-        ))}
-      </Slider>
- 
-
-
-
-</div>
-
-
-    
-<div className={styles.sdiv}>
-<h1>FULL STACK JAVA</h1>
-  <Slider {...settings1}>
-        {stateD2.map((course) => (
-
-          <div key={course._id} className={styles.maindiv}>
-            <h4>{course.courseName}</h4>
-            <p>Start Date: {new Date(course.startDate).toLocaleDateString()}</p>
-            <p>End Date: {new Date(course.endDate).toLocaleDateString()}</p>
-            <p>{course.subDescription}</p>
-            <p>Instructor: {course.instructor}</p>
-            <button  onClick={() => addtofav(course._id)}>LIKE</button>
-          </div>
-        ))}
-      </Slider>
- 
-
-
-
-</div> */}
-
-
-
-
-
-
-
-
-
-
 
 <div className={s.maindiv} >
    
@@ -282,6 +164,11 @@ return <div className={s.cdiv} key={course._id}>
 
  
  </div>
+ <Link href={`/courses/${course._id}`}>
+                        <button className={s.button}>
+                            Read More
+                        </button>
+                    </Link>
 
 </div>
 
@@ -317,8 +204,16 @@ return <div className={s.cdiv} key={course._id}>
 
 <Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() => addtofav(course._id)} />
 
+
+
  
  </div>
+
+ <Link href={`/courses/${course._id}`}>
+                        <button className={s.button}>
+                            Read More
+                        </button>
+                    </Link>
 
 </div>
 
@@ -357,6 +252,12 @@ return <div className={s.cdiv} key={course._id}>
  
  </div>
 
+ <Link href={`/courses/${course._id}`}>
+                        <button className={s.button}>
+                            Read More
+                        </button>
+                    </Link>
+
 </div>
 
 
@@ -394,6 +295,12 @@ return <div className={s.cdiv} key={course._id}>
  
  </div>
 
+ <Link href={`/courses/${course._id}`}>
+                        <button className={s.button}>
+                            Read More
+                        </button>
+                    </Link>
+
 </div>
 
 
@@ -430,6 +337,12 @@ return <div className={s.cdiv} key={course._id}>
 
  
  </div>
+
+ <Link href={`/courses/${course._id}`}>
+                        <button className={s.button}>
+                            Read More
+                        </button>
+                    </Link>
 
 </div>
 

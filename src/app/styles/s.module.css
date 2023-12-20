@@ -55,7 +55,7 @@ border: 1px solid #050202;
 
 border-radius: 15px;
 border-width: 3px;
-height: 400px ;
+height: 500px ;
 width: 300px;
 margin: 10px 30px 40px 130px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -130,4 +130,43 @@ font-weight: 400;
   
 
 
-   
+.hh {
+
+
+margin-bottom: 100px;
+margin-right: 70px;
+
+
+}
+
+.ssdiv{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+/* Basic button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    color: #3498db;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-top: 50px;
+  }
+  
+  /* Hover effect */
+  .button:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  
