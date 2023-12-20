@@ -16,9 +16,9 @@ export async function middleware(request) {
   }
 
   // If it's a public path and there is a token, redirect to home
-  if (isPublicPath && token) {
-    return NextResponse.redirect(new URL('/profiledashboard', request.nextUrl));
-  }
+  // if (isPublicPath && token) {
+  //   return NextResponse.redirect(new URL('/profiledashboard', request.nextUrl));
+  // }
 
   // Otherwise, allow access
   return NextResponse.next();
