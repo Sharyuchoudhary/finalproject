@@ -11,12 +11,16 @@ export async function GET(request)
         await Connect()
         const userid = await getdatafromtoken(request)
 
-        if(userid){
-            const user = await User.find({_id:userid}).select(("-password")) ;
-            return NextResponse.json({user:user})  
+        if(!userid){
+          return NextResponse.json({"msg" : "UNSUCK"})
+        } 
+        const user = await User.find({_id:userid}).select(("-password")) ;
+        if (!user) {
+          return NextResponse.json({"msg" : "UNSUCKMORE"})
+            
         }
         
-
+        return NextResponse.json({user:user})  
             
        
        
