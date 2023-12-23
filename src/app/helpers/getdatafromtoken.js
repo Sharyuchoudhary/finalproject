@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { NextResponse } from "next/server";
 
 export default async function getdatafromtoken (request) 
 {
@@ -11,9 +12,13 @@ export default async function getdatafromtoken (request)
           return NextResponse.json({"msg" : "UNSUCKTOKEN"})
 
         }
-        
+
         const decodedtoken = jwt.verify(token , 'finalproject')
-        console.log(decodedtoken.id);
+        if(!decodedtoken){
+
+          return NextResponse.json({"msg" : "UNSUCKDECODEDTOKEN" , "id" : decodedtoken.id})
+
+        }
         return decodedtoken.id ;
         
     } catch (error) {
