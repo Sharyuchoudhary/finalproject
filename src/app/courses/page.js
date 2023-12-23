@@ -30,7 +30,8 @@ export default function CoursePage() {
         method: 'GET',
       });
 
-      const {user} = await response.json();
+      const user = await response.json();
+      console.log(user);
       setname(user.username);
       
     } catch (error) {
