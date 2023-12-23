@@ -31,7 +31,7 @@ export default function CoursePage() {
       });
 
       const responsedata = await response.json();
-
+console.log("the data is" , responsedata);
       setname(responsedata[0].username);
     } catch (error) {
       console.log(error);

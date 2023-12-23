@@ -47,10 +47,7 @@ export default function CoursePage({ params }) {
   // useEffect to fetch course information on component mount
   useEffect(() => {
     getCourseInfo(id);
-  }, [id]); // Include id as a dependency to re-run the effect when id changes
-
-  // Render the component
-
+  }, [id]);
 
 
   async function addtocart(value)
