@@ -26,7 +26,7 @@ export async function GET(request)
        
         
     } catch (error) {
-      return NextResponse.json({"error" : error})
+      return NextResponse.json({"meerror" : error})
     }
 
   
