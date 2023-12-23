@@ -11,8 +11,7 @@ export async function GET(request)
         await Connect()
         const userid = await getdatafromtoken(request)
         const user = await User.find({_id:userid}).select(("-password")) ;
-        const user1 = user[0]
-        return NextResponse.json({user:user1})
+        return NextResponse.json({user:user})
         
     } catch (error) {
        console.log(error); 
