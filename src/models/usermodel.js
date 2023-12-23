@@ -49,7 +49,10 @@
             default: [],  // Default value is an empty array
           },
           
-
+         clickedcarts: {
+            type: [mongoose.Schema.Types.ObjectId],  // Array of ObjectIds
+            default: [],  // Default value is an empty array
+          },
 
 
 

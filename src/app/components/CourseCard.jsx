@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const CourseCard = ({ _id, category, courseName, description, endDate, imageURL, instructor, startDate, subDescription }) => {
+const CourseCard = ({ _id, category, courseName, description, endDate, imageURL, instructor, startDate, subDescription ,price }) => {
   const cardStyles = {
     border: '1px solid #ccc',
     padding: '16px',
@@ -77,7 +77,11 @@ const CourseCard = ({ _id, category, courseName, description, endDate, imageURL,
       <p>
         <strong>Sub Description:</strong> {subDescription}
       </p>
-      <motion.img src={imageURL} alt={courseName} style={imageStyles} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} />
+      <p>
+        <strong>PRICE:</strong> {price}
+      </p>
+
+      
       <button style={buttonStyles} onClick={handledeltebutton}>
         Remove
       </button>

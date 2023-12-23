@@ -16,9 +16,12 @@ export async function POST(req) {
       endDate,
       description,
       subDescription, // Add subDescription
+      price ,
       category, // Add category
+     
     } = await req.json();
 
+   
 
     // Capitalize course name and instructor
     const capitalizedCourseName = courseName.toUpperCase();
@@ -32,8 +35,10 @@ export async function POST(req) {
       endDate,
       description, 
       imageURL: "D:/2023-10-31 bday akola/bday akola 002.JPG", 
-      subDescription , 
+      subDescription ,
+      price ,  
       category ,
+     
       
       
     });

@@ -31,11 +31,18 @@ const courseSchema = new mongoose.Schema({
     type: String, // Add subDescription field
     required: true , // Adjust as needed based on your requirements
   },
+
+  price : {
+    type: Number, // Add category field
+    required: true, // Adjust as needed based on your requirements
+  } , 
   category: {
     type: String, // Add category field
     required: true, // Adjust as needed based on your requirements
   },
+
   createdat : Date ,
+
 });
 
 // Create the Course model

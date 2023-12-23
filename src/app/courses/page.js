@@ -153,6 +153,8 @@ return <div className={s.cdiv} key={course._id}>
             <p>{course.subDescription}</p>
             <hr/>
             <p>Instructor: {course.instructor}</p>
+            <p>Price: {course.price}</p>
+
       
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -195,6 +197,7 @@ return <div className={s.cdiv} key={course._id}>
           <p>{course.subDescription}</p>
           <hr/>
           <p>Instructor: {course.instructor}</p>
+          <p>Price: {course.price}</p>
     
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -240,6 +243,7 @@ return <div className={s.cdiv} key={course._id}>
           <p>{course.subDescription}</p>
           <hr/>
           <p>Instructor: {course.instructor}</p>
+          <p>Price: {course.price}</p>
     
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -283,6 +287,7 @@ return <div className={s.cdiv} key={course._id}>
           <p>{course.subDescription}</p>
           <hr/>
           <p>Instructor: {course.instructor}</p>
+          <p>Price: {course.price}</p>
     
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -326,6 +331,7 @@ return <div className={s.cdiv} key={course._id}>
           <p>{course.subDescription}</p>
           <hr/>
           <p>Instructor: {course.instructor}</p>
+          <p>Price: {course.price}</p>
     
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 

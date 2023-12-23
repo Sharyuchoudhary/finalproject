@@ -15,7 +15,9 @@ export default function CourseManagement() {
     endDate: '',
     description: '',
     subDescription: '',
+    price:'' ,
     category: '',
+     
   });
 
   const [categoryOptions, setCategoryOptions] = useState([
@@ -87,6 +89,7 @@ export default function CourseManagement() {
   const [categoryOptionsVisible, setCategoryOptionsVisible] = useState(false);
 
   const handleFormSubmit = async (event) => {
+  
     event.preventDefault();
 
     try {
@@ -113,7 +116,9 @@ export default function CourseManagement() {
           endDate: '',
           description: '',
           subDescription: '',
+          price:'' ,
           category: '',
+           
         });
       }
     } catch (error) {
@@ -201,6 +206,20 @@ export default function CourseManagement() {
           style={inputStyle}
         />
 
+        
+<label htmlFor="price" style={labelStyle}>
+          Price:
+        </label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          value={formData.price}
+          onChange={handleInputChange}
+    
+          style={inputStyle}
+        />
+
         <label htmlFor="category" style={labelStyle}>
           Category:
         </label>
@@ -213,6 +232,8 @@ export default function CourseManagement() {
           onFocus={() => setCategoryOptionsVisible(true)}
           style={inputStyle}
         />
+
+
 
         {categoryOptionsVisible && (
           <ul>
