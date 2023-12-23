@@ -31,6 +31,7 @@ export default function CoursePage() {
       });
 
       const userdata = await response.json();
+      console.log(userdata);
      const {user} = userdata
      const Name = user[0].username
      console.log("the name is ", Name);
