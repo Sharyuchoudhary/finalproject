@@ -17,7 +17,7 @@ import s from "@/app/styles/s.module.css"
 
 
 export default function CoursePage() {
-  const [name, setname] = useState('');
+  const [name, setname] = useState({});
   const [array, setarray] = useState([]);
   const [stateD1, setStateD1] = useState([]);
   const [stateD2, setStateD2] = useState([]);
