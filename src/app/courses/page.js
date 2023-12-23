@@ -17,7 +17,7 @@ import s from "@/app/styles/s.module.css"
 
 
 export default function CoursePage() {
-  const [name, setname] = useState([]);
+  const [name, setname] = useState("");
   const [array, setarray] = useState([]);
   const [stateD1, setStateD1] = useState([]);
   const [stateD2, setStateD2] = useState([]);
@@ -30,9 +30,13 @@ export default function CoursePage() {
         method: 'GET',
       });
 
-      const user = await response.json();
-console.log("the data is" , user);
-      setname(user[0].username);
+      const userdata = await response.json();
+     const {user} = userdata
+     const Name = user[0].username
+     console.log("the name is ", Name);
+      setname(Name);
+      
+     
     } catch (error) {
       console.log(error);
     }
