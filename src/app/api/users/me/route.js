@@ -10,7 +10,7 @@ export async function GET(request)
     try {
         await Connect()
         const userid = await getdatafromtoken(request)
-
+        console.log("The user id is" , userid);
         if(!userid){
           return NextResponse.json({"msg" : "UNSUCK"})
         } 
@@ -26,6 +26,7 @@ export async function GET(request)
        
         
     } catch (error) {
+     console.log(error);
       return NextResponse.json({"meerror" : error})
     }
 
