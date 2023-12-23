@@ -30,9 +30,9 @@ export default function CoursePage() {
         method: 'GET',
       });
 
-      const {responsedata} = await response.json();
-console.log("the data is" , responsedata);
-      setname(responsedata[0].username);
+      const {user} = await response.json();
+console.log("the data is" , user);
+      setname(user[0].username);
     } catch (error) {
       console.log(error);
     }
