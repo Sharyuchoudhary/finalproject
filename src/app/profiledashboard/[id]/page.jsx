@@ -12,8 +12,9 @@ export default function Profilepage({ params }) {
       try {
         const response = await fetch('/api/users/me', { method: 'GET' });
         const data = await response.json();
-        console.log(data);
-        setResponsedata(data);
+        const {user} = data 
+
+        setResponsedata(user);
       } catch (error) {
         console.error(error);
       }
@@ -54,7 +55,7 @@ export default function Profilepage({ params }) {
             color: '#41b883', // MongoDB Atlas green
           }}
         >
-          WELCOME, {responsedata?.[0]?.username || 'User'}
+          WELCOME, {responsedata?.username || 'User'}
         </h1>
         <p
           style={{
@@ -64,7 +65,7 @@ export default function Profilepage({ params }) {
             color: '#41b883',
           }}
         >
-          ID: {responsedata?.[0]?._id || 'N/A'}
+          ID: {responsedata?._id || 'N/A'}
         </p>
         <p
           style={{
@@ -74,7 +75,7 @@ export default function Profilepage({ params }) {
             color: '#41b883',
           }}
         >
-          Email: {responsedata?.[0]?.email || 'N/A'}
+          Email: {responsedata?.email || 'N/A'}
         </p>
         <p
           style={{
@@ -84,7 +85,12 @@ export default function Profilepage({ params }) {
             color: '#41b883',
           }}
         >
-          Number: {responsedata?.[0]?.number || 'N/A'}
+          Number: {responsedata?.number || 'N/A'}
+        </p>
+        
+        <p>
+
+
         </p>
       </div>
       

@@ -1,11 +1,11 @@
 // pages/favcourse.js
 
 'use client'
-
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import s from "@/app/styles/s.module.css"
 import Image from 'next/image';
-import Link from 'next/link'
+import Link from 'next/link';
 
 const FavCoursePage = ({ name }) => {
   const [favCourses, setFavCourses] = useState([]);
@@ -18,8 +18,7 @@ const FavCoursePage = ({ name }) => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
-        setFavCourses(data.favoriteCourses); // Update state with favoriteCourses
+        setFavCourses(data.favoriteCourses);
       } else {
         console.error('Failed to fetch data');
       }
@@ -41,11 +40,8 @@ const FavCoursePage = ({ name }) => {
         },
         body: JSON.stringify({ id: id }),
       });
-      
-  
+
       if (response.ok) {
-        console.log('Favorite course deleted successfully.');
-        // Update the state or fetch favorite courses again if needed
         fetchData();
       } else {
         console.error('Failed to delete favorite course.');
@@ -54,58 +50,43 @@ const FavCoursePage = ({ name }) => {
       console.error('Error deleting favorite course:', error);
     }
   }
-  
-
-
-
-
-
 
   return (
+    <div className={s.maindiv}>
+      <Head>
+        <title>{name} Favorite Courses - Skillsail</title>
+        <meta name="description" content={`Explore and manage your favorite courses on Skillsail. View course details and remove courses from your favorites.`} />
+      </Head>
 
-    
-    <div className={s.maindiv} >
-   
-     <div className={s.h}> <h1>Your Favorite Courses</h1> <hr/>
-     
-    <Link href="/courses"><Image className={s.i} src={"/hh.png"} width={30} height={30} alt='delet text' />
-     </Link> 
-     </div>
-   
-      
-        {favCourses.map((course) =>{
+      <div className={s.h}>
+        <h1>Your Favorite Courses</h1>
+        <hr/>
+        <Link href="/courses">
+          <Image className={s.i} src={"/hh.png"} width={30} height={30} alt='back to courses' />
+        </Link> 
+      </div>
 
-return <div className={s.cdiv} key={course._id}>
+      {favCourses.map((course) => (
+        <div className={s.cdiv} key={course._id}>
+          <div className={s.cn}>
+            <h4>{course.courseName}</h4>
+          </div>
 
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
+          <p>DURATION</p>
+          <p>{new Date(course.startDate).toLocaleDateString()} - {new Date(course.endDate).toLocaleDateString()}</p>
+          <p>{course.subDescription}</p>
+          <hr/>
+          <p>Instructor: {course.instructor}</p>
 
-            <p>DURATION</p>
-            <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
-            <p>{course.subDescription}</p>
-            <hr/>
-            <p>Instructor: {course.instructor}</p>
-      
-<Image src={"/react.png"} width={50} height={50} alt="React Logo" />
+          <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
-<div className={s.del}> 
-
-
-
-<Image src={'/t.png'} width={20} height={20} alt="Delete Icon" onClick={() => deleteFavCourse(course._id)} />
-
- 
- </div>
-
-
-</div>
-
-
-        })}
-      
+          <div className={s.del}>
+            <Image src={'/t.png'} width={20} height={20} alt="Delete Icon" onClick={() => deleteFavCourse(course._id)} />
+          </div>
+        </div>
+      ))}
     </div>
-    
   );
- 
 };
 
 export default FavCoursePage;

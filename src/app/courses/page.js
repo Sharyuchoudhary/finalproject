@@ -1,22 +1,18 @@
- 'use client'
+'use client'
 
 import { useEffect, useState } from 'react';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Welcomeuser from '../components/Welcomeuser';
 import Link from 'next/link'
-
 import Image from 'next/image'
-
-
 import s from "@/app/styles/s.module.css"
-
-
-
+import Head from 'next/head';
 
 
 export default function CoursePage() {
+
+
   const [name, setname] = useState("");
   const [array, setarray] = useState([]);
   const [stateD1, setStateD1] = useState([]);
@@ -24,22 +20,27 @@ export default function CoursePage() {
   const [stateD3, setStateD3] = useState([]);
   const [stateD4, setStateD4] = useState([]);
 
-  async function checkuser() {
+async function checkuser() {
+
     try {
-      const response = await fetch('/api/users/me', {
+      const response = await fetch('/api/users/me',{
         method: 'GET',
       });
-
-      const userdata = await response.json();
-      console.log(userdata);
-     const {user} = userdata
-     const Name = user[0].username
-     console.log("the name is ", Name);
-      setname(Name);
       
-     
-    } catch (error) {
-      console.log(error);
+    const {user} = await response.json()
+
+if (user) {
+    const Name = user.username; 
+    setname(Name)
+}
+else {
+  alert(" no userdata ! ")
+}
+
+
+}
+catch (error) {
+      console.log("the error from userhome" , error);
     }
   }
 
@@ -145,9 +146,9 @@ const response = await fetch('/api/users/atfav' ,
      <div className={s.h}> 
      <h1>POPULAR COURSES</h1> <hr/>
      </div>
-   
+    
       
-        {array.map((course) =>{
+    {array.map((course) =>{
 
 return <div className={s.cdiv} key={course._id}>
 
@@ -172,12 +173,9 @@ return <div className={s.cdiv} key={course._id}>
  
  </div>
  <Link href={`/courses/${course._id}`}>
-                        <button className={s.button}>
-                            Read More
-                        </button>
-                    </Link>
-
-</div>
+ <button className={s.button}>Read More </button>
+ </Link>
+ </div>
 
 
         })}
@@ -328,6 +326,13 @@ return <div className={s.cdiv} key={course._id}>
       {stateD4.map((course) =>{
 
 return <div className={s.cdiv} key={course._id}>
+  <Head>
+        <title>Skillsail - Online Courses Platform</title>
+        <meta
+          name="description"
+          content="Explore popular courses, app development, data science, full-stack Java, and web development on Skillsail. Enhance your skills with high-quality courses."
+        />
+      </Head>
 
 <div className={s.cn}>  <h4>{course.courseName}</h4></div>
 

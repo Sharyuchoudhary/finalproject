@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-
+import Head from 'next/head';
 export default function CourseManagement() {
   const [message, setMessage] = useState('');
 
@@ -128,6 +128,14 @@ export default function CourseManagement() {
 
   return (
     <div style={containerStyle}>
+
+<Head>
+        <title>Course Management - Skillsail</title>
+        <meta
+          name="description"
+          content="Register new courses on Skillsail. Manage course details and categories for online learning."
+        />
+      </Head>
       <h1 style={{ textAlign: 'center' }}>Course Registration</h1>
       <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
         <label htmlFor="courseName" style={labelStyle}>

@@ -1,23 +1,16 @@
-
 import React from "react";
+import { Helmet } from "react-helmet";
 
-export default function Welcomeuser(props)
-{
+export default function Welcomeuser(props) {
+  return (
+    <div>
+      <Helmet>
+        <title>Welcome {props.username} - Skillsail</title>
+        <meta name="description" content={`Welcome ${props.username}! Explore our range of online courses at Skillsail.`} />
+      </Helmet>
 
-return (
-
-
-<div>
-
-<h1> Welcome  {props.username} ! </h1>
-<p> Checkout Our Courses </p>
-
-</div>
-
-
-
-
-
-
-)
+      <h1>Welcome {props.username}!</h1>
+      <p>Checkout Our Courses</p>
+    </div>
+  );
 }

@@ -1,13 +1,16 @@
 // CourseCard.jsx
+
+"use client "
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const CourseCard = ({ _id, category, courseName, description, endDate, imageURL, instructor, startDate, subDescription ,price }) => {
   const cardStyles = {
     border: '1px solid #ccc',
     padding: '16px',
     marginBottom: '16px',
-    position: 'relative', // Added position relative for button positioning
+    position: 'relative',
   };
 
   const imageStyles = {
@@ -15,7 +18,7 @@ const CourseCard = ({ _id, category, courseName, description, endDate, imageURL,
   };
 
   const buttonStyles = {
-    backgroundColor: '#ff5a5f', // Cute red color
+    backgroundColor: '#ff5a5f',
     color: 'white',
     padding: '8px 16px',
     border: 'none',
@@ -31,9 +34,9 @@ const CourseCard = ({ _id, category, courseName, description, endDate, imageURL,
     visible: { opacity: 1, scale: 1 },
   };
 
-  const [message, Setmessage] = useState('');
+  const [message, setMessage] = useState('');
 
-  async function handledeltebutton() {
+  async function handleDeleteButton() {
     try {
       const toDeleteCourse = _id;
 
@@ -47,47 +50,54 @@ const CourseCard = ({ _id, category, courseName, description, endDate, imageURL,
 
       if (response.ok) {
         const { message } = await response.json();
-        Setmessage(message);
+        setMessage(message);
       } else {
-        console.log('Failed to delete user');
+        console.log('Failed to delete course');
       }
     } catch (error) {
-      console.error('Error deleting user:', error);
+      console.error('Error deleting course:', error);
     }
   }
 
   return (
-    <motion.div style={cardStyles} initial="hidden" animate="visible" variants={cardVariants}>
-      <h2>{courseName}</h2>
-      <p>
-        <strong>Category:</strong> {category}
-      </p>
-      <p>
-        <strong>Description:</strong> {description}
-      </p>
-      <p>
-        <strong>Start Date:</strong> {new Date(startDate).toLocaleDateString()}
-      </p>
-      <p>
-        <strong>End Date:</strong> {new Date(endDate).toLocaleDateString()}
-      </p>
-      <p>
-        <strong>Instructor:</strong> {instructor}
-      </p>
-      <p>
-        <strong>Sub Description:</strong> {subDescription}
-      </p>
-      <p>
-        <strong>PRICE:</strong> {price}
-      </p>
+    <>
+      <Head>
+        <title>{courseName} - Skillsail</title>
+        <meta name="description" content={description} />
+      </Head>
 
-      
-      <button style={buttonStyles} onClick={handledeltebutton}>
-        Remove
-      </button>
-      <div style={{ color: 'green' }}>{message}</div>
-    </motion.div>
+      <motion.div style={cardStyles} initial="hidden" animate="visible" variants={cardVariants}>
+        <h2>{courseName}</h2>
+        <p>
+          <strong>Category:</strong> {category}
+        </p>
+        <p>
+          <strong>Description:</strong> {description}
+        </p>
+        <p>
+          <strong>Start Date:</strong> {new Date(startDate).toLocaleDateString()}
+        </p>
+        <p>
+          <strong>End Date:</strong> {new Date(endDate).toLocaleDateString()}
+        </p>
+        <p>
+          <strong>Instructor:</strong> {instructor}
+        </p>
+        <p>
+          <strong>Sub Description:</strong> {subDescription}
+        </p>
+        <p>
+          <strong>PRICE:</strong> {price}
+        </p>
+        
+        <button style={buttonStyles} onClick={handleDeleteButton}>
+          Remove
+        </button>
+        <div style={{ color: 'green' }}>{message}</div>
+      </motion.div>
+    </>
   );
 };
 
 export default CourseCard;
+

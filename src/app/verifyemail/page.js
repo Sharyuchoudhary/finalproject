@@ -1,7 +1,7 @@
 "use client";
-
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 
 export default function VerifyEmailPage() {
   const [token, setToken] = useState("");
@@ -45,26 +45,36 @@ export default function VerifyEmailPage() {
   }, [token]);
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Verify Email</h1>
-      <h2 style={styles.token}>{token ? `${token}` : "no token"}</h2>
+    <>
+      <Head>
+        <title>Verify Email - Your Website Name</title>
+        <meta
+          name="description"
+          content="Verify your email on Your Website Name for secure access."
+        />
+      </Head>
+      <div style={styles.container}>
+        <h1 style={styles.heading}>Verify Email</h1>
+        <h2 style={styles.token}>{token ? `${token}` : "no token"}</h2>
 
-      {verified && (
-        <div style={styles.success}>
-          <h2>Email Verified</h2>
-          <Link href="/LOGIN" style={styles.link}>
-            Login
-          </Link>
-        </div>
-      )}
-      {error && (
-        <div style={styles.error}>
-          <h2>Error</h2>
-        </div>
-      )}
-    </div>
+        {verified && (
+          <div style={styles.success}>
+            <h2>Email Verified</h2>
+            <Link href="/LOGIN" style={styles.link}>
+              Login
+            </Link>
+          </div>
+        )}
+        {error && (
+          <div style={styles.error}>
+            <h2>Error</h2>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
+
 
 const styles = {
   container: {

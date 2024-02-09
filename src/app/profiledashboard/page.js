@@ -1,54 +1,43 @@
-'use client'
+'use client';
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Head from 'next/head';
 
 export default function Profiledashboard() {
+  const router = useRouter();
 
-  const router = useRouter() ; 
+  async function getuserdata() {
+    try {
+      const response = await fetch('/api/users/me', { method: 'GET' });
+      const responsedata = await response.json();
+      const { user } = responsedata;
 
-
-async function getuserdata()
-{
-
-  try {
-    
-    
-const response  = await fetch ('/api/users/me' , { method:"GET" }) 
-
-const responsedata  = await response.json();
-
-if(response.status === 200)
-{
-  router.push(`/profiledashboard/${responsedata[0]._id}`)
-}
-   
-
-
-  } catch (error) {
-    console.log(error);
+      if (response.status === 200) {
+        router.push(`/profiledashboard/${user._id}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-
-}
-
-
-useEffect(()=>{
-
-
-getuserdata() ; 
-
-
-} , [])
+  useEffect(() => {
+    getuserdata();
+  }, []);
 
   return (
-    <div>
-    
+    <>
+      <Head>
+        <title>Profile Dashboard - Skillsail</title>
+        <meta
+          name="description"
+          content="Explore your profile dashboard on Skillsail. View and manage your profile information, courses, and more."
+        />
+      </Head>
 
-
-  
-    
-    </div>
-  )
+      <div>
+        {/* Your existing component content */}
+      </div>
+    </>
+  );
 }
-
