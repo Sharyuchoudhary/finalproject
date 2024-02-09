@@ -18,10 +18,12 @@
 
   export default function CoursePage({ params }) {
     
+    let msg1 = "COURSE SUCCESSFULLY ADDED"
     const { id } = params;
 
   
     const [course, setCourse] = useState(null);
+    const [msg, setmsg] = useState("");
 
     
     async function getCourseInfo(id) {
@@ -32,9 +34,10 @@
 
         const  {data}  = await response.json();
 
-        if(data){
-          console.log(data);
+        if(data)
+        {
         setCourse(data);
+     
         }
   else{
     alert("no data")
@@ -51,7 +54,7 @@
 
 
 
-    // useEffect to fetch course information on component mount
+  
     useEffect(() => {
       getCourseInfo(id);
     }, [id]);
@@ -96,8 +99,11 @@
             <p>Price: {course.price}</p>
 
           
-            <Image src={"/sc.png"} width={40} height={40} alt="Course Logo"  onClick={() => addtocart(course._id)} />
-            
+            <Image src={"/sc.png"} width={40} height={40} alt="Course Logo" onClick={() => {
+    addtocart(course._id);
+    setmsg(msg1); 
+}} />
+            <p>{msg}</p>
           </>
         )}
       </div>

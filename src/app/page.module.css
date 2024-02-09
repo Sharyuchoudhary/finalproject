@@ -67,6 +67,7 @@
     border: none;
     border-radius: 4px;
     transition: background-color 0.3s;
+    margin: 10px;
   }
   
   .button:hover {
@@ -95,3 +96,8 @@
   /* Additional Styling */
   /* Add more styles to enhance the appearance of your form */
   
+  .link{
+
+text-decoration: none;
+color: white;
+  }

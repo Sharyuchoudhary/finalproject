@@ -168,7 +168,12 @@ return <div className={s.cdiv} key={course._id}>
 
 
 
-<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() => addtofav(course._id)} />
+<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() =>{ addtofav(course._id);
+window.alert("Course Successfully Liked")
+
+}
+
+} />
 
  
  </div>

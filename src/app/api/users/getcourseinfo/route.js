@@ -16,7 +16,7 @@ const urlParts = url1.split("=");
 const idValue = urlParts[1]; 
 const data = await Course.findOne({_id:idValue})
 
-return NextResponse.json({data :data})
+return NextResponse.json({data :data })
 
     } catch (error) {
         return NextResponse.json({msg :"NOPE" , "error" : error })

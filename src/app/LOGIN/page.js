@@ -4,6 +4,8 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
+import Link from "next/link"
+
 
 export default function Loginpage() {
   const [user, setuser] = useState({ email: '', password: '' });
@@ -35,6 +37,8 @@ export default function Loginpage() {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
+    textDecoration : "none",
+    margin: "10px"
   };
 
   const errorStyle = {
@@ -50,6 +54,8 @@ export default function Loginpage() {
     margin: '0',
     background: 'linear-gradient(to right, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
   };
+
+
 
   function handlechange(e) {
     const { name, value } = e.target;
@@ -106,6 +112,12 @@ export default function Loginpage() {
         <p style={errorStyle}>{servermsg}</p>
         <button onClick={handlesubmit} style={buttonStyle}>
           Log In
+        </button>
+
+        <button style={buttonStyle}>
+        <Link style={buttonStyle} href="/">
+    SignUp
+  </Link>
         </button>
       </div>
     </div>

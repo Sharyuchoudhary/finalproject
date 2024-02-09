@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Link from "next/link"
 
 export default function Homepage() {
   const [User, setUser] = useState({ username: '', number: '', email: '', password: '' });
@@ -106,7 +107,14 @@ export default function Homepage() {
           disabled={buttonDisabled}
         >
           {buttonDisabled ? 'NO SIGNUP' : 'SIGNUP'}
+
         </button>
+
+        <button className={buttonDisabled ? styles.buttonDisabled : styles.button}>
+  <Link className={styles.link} href="/LOGIN">
+    LOGIN
+  </Link>
+</button>
       </div>
     </>
   );
