@@ -1,0 +1,47 @@
+/* styles/Success.module.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .successMessage {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    color: #4caf50; /* Green color */
+  }
+  
+  .paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .additionalInfo {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50; /* Green color */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+  }
+  

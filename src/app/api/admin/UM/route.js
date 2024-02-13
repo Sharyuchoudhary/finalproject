@@ -9,7 +9,9 @@ try {
 
 await Connect() ; 
 
-const data = await User.find({isVerified:true}) ;
+// const data = await User.find({isVerified:true}) ;
+ const data = await User.find({}) ;
+
 return NextResponse.json(data)
     
 } catch (error) {

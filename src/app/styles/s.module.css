@@ -1,172 +1,73 @@
-.body{
-
-margin: 0px;
-background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-display: flex;
-
-justify-content: center;
-
+/* Styles for main container */
+.maindiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
-
-.body h1 {
-
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+/* Styles for header */
+.h {
+  margin-bottom: 20px;
 }
 
-.body h4{
-
-
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
-    font-size: larger;
-    font-weight: 100;
-
+/* Heading styles */
+.h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-.body p {
-
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif  ;
-font-weight: 400;
-
+/* Separator line styles */
+.hr {
+  width: 80%;
+  margin-bottom: 20px;
+  border: 1px solid #000;
 }
 
-.body hr {
-
-/* width: 180px; */
-width: 50%;
-
+/* Styles for link */
+.link {
+  text-decoration: none;
 }
 
-
-
-    .maindiv {
-        display: flex ; 
-        flex-direction: row;
-        flex-flow: row wrap;
-       
-      }
-
-
-      .cdiv{
-
-/* background-image: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);  */
-background-image: linear-gradient(to right top, #ffffff, #f7f1ff, #f5e1ff, #f8cfff, #ffbcfa);
-border: 1px solid #050202;
-
-border-radius: 15px;
-border-width: 3px;
-height: 500px ;
-width: 300px;
-margin: 10px 30px 40px 130px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-text-align: center;
-
-      }
-
-.cn
-{
-
-background-color: rgb(255, 255, 255);
-
-border-radius: 30px;
-height: 50px;
-width: 250px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 25px;
+/* Styles for delete icon */
+.del {
+  cursor: pointer;
 }
 
-.h{
-
-margin: 140px 290px 140px 580px;
-
-
+/* Container styles for each course */
+.cdiv {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
 }
 
-.del{
-
-
-    margin-top: 20px;
+/* Styles for course details */
+.cn {
+  margin-bottom: 10px;
 }
 
-.i{
-
-margin-left: 150px;
-margin-top: 30px;
-}
-
-
-.head{
-
-
-margin :200px 0px 300px 0px;
-text-align: center;
-
-}
-
-.head h1{
-
-font-size: 3.5rem;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-weight: 400;
-
-}
-
-.head p{
-
-
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    
-    }
-
-
- 
-.l {
-    background-image: linear-gradient(to right top, #cc95f7, #ffa0c7, #ffc3b2, #fce6c8, #fcfff6);
-  }
-  
-
-
-.hh {
-
-
-margin-bottom: 100px;
-margin-right: 70px;
-
-
-}
-
-.ssdiv{
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-}
-
-/* Basic button styling */
+/* Button styles */
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #3498db;
-    color: #3498db;
-    background-color: #ffffff;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    margin-top: 50px;
-  }
-  
-  /* Hover effect */
-  .button:hover {
-    background-color: #3498db;
-    color: #ffffff;
-    border-color: #ffffff;
-  }
-  
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db;
+  color: #3498db;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect for button */
+.button:hover {
+  background-color: #3498db;
+  color: #ffffff;
+  border-color: #ffffff;
+}
