@@ -58,65 +58,23 @@ export default function Homepage() {
 
   return (
     <>
-      <Head>
+
+<Head>
         <title>Sign Up - Your Website Name</title>
         <meta
           name="description"
           content="Sign up for an account at Your Website Name and start your learning journey. Register with your full name, phone number, email, and password."
         />
       </Head>
-      <div className={styles.container}>
-        <h1 className={styles.title}>Sign Up</h1>
-        <input
-          className={styles.input}
-          name="username"
-          type="text"
-          value={User.username}
-          placeholder="Enter Full Name"
-          onChange={handleChange}
-        />
-        <input
-          className={styles.input}
-          name="number"
-          type="text"
-          value={User.number}
-          placeholder="Enter Phone Number"
-          onChange={handleChange}
-        />
-        <input
-          className={styles.input}
-          name="email"
-          type="email"
-          value={User.email}
-          placeholder="Enter Email"
-          onChange={handleChange}
-        />
-        <input
-          className={styles.input}
-          name="password"
-          type="password"
-          value={User.password}
-          placeholder="Enter Password"
-          onChange={handleChange}
-        />
-        {passwordError && <p className={styles.error}>{passwordError}</p>}
-        {serverMessage && <p className={styles.error}>{serverMessage}</p>}
-        {evm && <p className={styles.error}>Check Email for Verification and Login!</p>}
-        <button
-          className={buttonDisabled ? styles.buttonDisabled : styles.button}
-          onClick={handleSubmit}
-          disabled={buttonDisabled}
-        >
-          {buttonDisabled ? 'NO SIGNUP' : 'SIGNUP'}
 
-        </button>
+<header className={styles.header}>
+  
+<Link href="/LOGIN"> <button className={styles.but} > LOGIN  </button> </Link>  
+<Link href="/SIGNUP"> <button className={styles.but} > SIGNUP </button></Link>  
 
-        <button className={buttonDisabled ? styles.buttonDisabled : styles.button}>
-  <Link className={styles.link} href="/LOGIN">
-    LOGIN
-  </Link>
-</button>
-      </div>
+   </header>
+
+      
     </>
   );
 }
