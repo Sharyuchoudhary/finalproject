@@ -67,12 +67,63 @@ export default function Homepage() {
         />
       </Head>
 
-<header className={styles.header}>
-  
-<Link href="/LOGIN"> <button className={styles.but} > LOGIN  </button> </Link>  
-<Link href="/SIGNUP"> <button className={styles.but} > SIGNUP </button> </Link>  
+      <div className={styles.container}>
+        <h1 className={styles.title}>SIGN UP</h1>
+        <input
+          className={styles.input}
+          name="username"
+          type="text"
+          value={User.username}
+          placeholder="FullName"
+          onChange={handleChange}
+        />
+        <input
+          className={styles.input}
+          name="number"
+          type="text"
+          value={User.number}
+          placeholder="Phone Number"
+          onChange={handleChange}
+        />
+        <input
+          className={styles.input}
+          name="email"
+          type="email"
+          value={User.email}
+          placeholder="Email"
+          onChange={handleChange}
+        />
+        <input
+          className={styles.input}
+          name="password"
+          type="password"
+          value={User.password}
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        {passwordError && <p className={styles.error}>{passwordError}</p>}
+        {serverMessage && <p className={styles.error}>{serverMessage}</p>}
+        {evm && <p className={styles.error}>Check Email for Verification and Login!</p>}
 
-   </header>
+<div className={styles.divdiv}>   <button
+          className={buttonDisabled ? styles.buttonDisabled : styles.button}
+          onClick={handleSubmit}
+          disabled={buttonDisabled}
+        >
+          {buttonDisabled ? 'NO SIGNUP' : 'SIGNUP'}
+
+        </button>
+
+        <button className={buttonDisabled ? styles.buttonDisabled : styles.button}>
+  <Link className={styles.link} href="/LOGIN">
+    LOGIN
+  </Link>
+</button> </div>
+
+      
+      </div>	
+
+
 
       
     </div>

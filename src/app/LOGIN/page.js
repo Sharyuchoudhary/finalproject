@@ -1,61 +1,15 @@
-
 'use client';
 
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import Link from "next/link"
-
+import style from "@/app/LOGIN/page.module.css"
 
 export default function Loginpage() {
   const [user, setuser] = useState({ email: '', password: '' });
   const [servermsg, setservermsg] = useState('');
   const router = useRouter();
-
-  const containerStyle = {
-    maxWidth: '400px',
-    margin: 'auto',
-    padding: '20px',
-    backgroundColor: '#ffffff',
-    border: '1px solid #dbdbdb',
-    borderRadius: '10px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-  };
-
-  const inputStyle = {
-    width: '100%',
-    padding: '10px',
-    margin: '10px 0',
-    border: '1px solid #dbdbdb',
-    borderRadius: '5px',
-  };
-
-  const buttonStyle = {
-    background: 'linear-gradient(to right, #fd5c63, #fe9458)',
-    color: '#ffffff',
-    padding: '10px 15px',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    textDecoration : "none",
-    margin: "10px"
-  };
-
-  const errorStyle = {
-    color: '#ed4956',
-    marginTop: '10px',
-  };
-
-  const bodyStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    margin: '0',
-    background: 'linear-gradient(to right, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
-  };
-
-
 
   function handlechange(e) {
     const { name, value } = e.target;
@@ -80,7 +34,6 @@ export default function Loginpage() {
       setservermsg(message);
       if (status === 200) {
         Cookies.set('token', token, { expires: 1 });
-
         router.push('/userhome');
       } else {
         console.log('No Cookie Generated!');
@@ -91,15 +44,16 @@ export default function Loginpage() {
   }
 
   return (
-    <div style={bodyStyle}>
-      <div style={containerStyle}>
+    <div className={style.container}>
+      <h1 className={style.title}>LOG IN</h1>
+      <div className={style.containerStyle}>
         <input
           type="text"
           placeholder="Phone number, username, or email"
           value={user.email}
           onChange={handlechange}
           name="email"
-          style={inputStyle}
+          className={style.input}
         />
         <input
           type="password"
@@ -107,19 +61,21 @@ export default function Loginpage() {
           value={user.password}
           onChange={handlechange}
           name="password"
-          style={inputStyle}
+          className={style.input}
         />
-        <p style={errorStyle}>{servermsg}</p>
-        <button onClick={handlesubmit} style={buttonStyle}>
-          Log In
-        </button>
-
-        <button style={buttonStyle}>
-        <Link style={buttonStyle} href="/">
-    SignUp
-  </Link>
-        </button>
+        <p className={style.errorStyle}>{servermsg}</p>
+        <div className={style.divdiv}>
+          <button onClick={handlesubmit} className={style.button}>
+            LOGIN
+          </button>
+          <button className={style.button}>
+            <Link className={style.link} href="/SIGNUP">
+              SIGNUP
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+
