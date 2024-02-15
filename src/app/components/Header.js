@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import styles from 'src/app/styles/nav.module.css';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
+
+  const router = useRouter()
   const [isadmin, setisadmin] = useState(false);
 
   async function checkuser() {
@@ -40,7 +43,7 @@ export default function Header() {
       const response = await fetch('/api/users/logout', { method: 'GET' });
 
       if (response.status === 200) {
-        window.location.href = '/';
+       router.push("/")
         console.log('Success Logout!');
       } else {
         console.log('BAD RESPONSE logout ROUTE!');
