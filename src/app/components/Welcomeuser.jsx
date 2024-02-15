@@ -9,7 +9,7 @@ export default function Welcomeuser(props) {
         <meta name="description" content={`Welcome ${props.username}! Explore our range of online courses at Skillsail.`} />
       </Helmet>
 
-      <h1>Welcome {props.username}!</h1>
+      <h1>WELCOME  , {props.username} !</h1>
       <p>Checkout Our Courses</p>
     </div>
   );

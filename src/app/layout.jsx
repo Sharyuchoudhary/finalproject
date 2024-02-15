@@ -1,4 +1,6 @@
+
 import styles from './page.module.css';
+
 
 export const metadata = {
   title: 'Next.js',
@@ -8,6 +10,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
+      
+
       <body className={styles.body1}>{children}</body>
     </html>
   )

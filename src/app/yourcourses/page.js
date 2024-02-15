@@ -134,34 +134,48 @@ router.push(redirect)
   return (
 
     
-    <div className={s.maindiv} >
+    <div className={s.maindivv} >
    
-     <div className={s.h}> <h1>Your CART Courses</h1> <hr/>
+     <div className={s.hh}> <h1> CART </h1> <hr/>
      
-    <Link href="/courses"><Image className={s.i} src={"/hh.png"} width={30} height={30} alt='delet text' />
+    <Link href="/courses"><Image className={s.ii} src={"/hh.png"} width={30} height={30} alt='delet text' />
      </Link> 
      </div>
-   
-        {favCourses.map((course) =>{
 
-return <div className={s.cdiv} key={course._id}>
 
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
-<div className={s.cn}>  <h4>{course. instructor}</h4></div>
-<div className={s.cn}>  <h4>{course.price}</h4></div>
+     <div className={s.cdivv}>     {favCourses.map((course) =>{
+
+return <div className={s.ccdiv1}  key={course._id}>
+  
+  <div className={s.ccdiv} key={course._id}>
+
+
+
+<div className={s.ccn}>  <h4>{course.courseName}</h4></div>
+<div className={s.ccn}>  <h4>{course. instructor}</h4></div>
+<div className={s.ccn}>  <h4>{course.price}</h4></div>
 <div className={s.del}> 
 <Image src={'/t.png'} width={20} height={20} alt="Delete Icon" onClick={() => deleteFavCourse(course._id)} />
- </div>
 </div>
+
+</div> </div> 
 
  })}
 
-<div className={s.cn}> 
-<h4>TOTAL PRICE TO PAY </h4>
-<h4> BILL : $ {bill} </h4>
-<button onClick={makepayment}> MAKE PAYMENT</button>
+ </div>
+   
+   
+<div className={s.cnn}> 
+
+<h4> BILL : Rs. {bill} </h4>
+<button className={s.butt} onClick={makepayment}>CHECKOUT </button>
+
+</div> 
+
+
 </div>
-</div>
+
+
     
   );
  

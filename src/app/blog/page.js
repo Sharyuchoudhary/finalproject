@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/common.module.css";
 
+
 export default function Page() {
   const [dataresponse, setdataresponse] = useState([]);
 
@@ -21,6 +22,7 @@ export default function Page() {
 
   return (
     <div className={styles.blogdiv}>
+     
       <Helmet>
         <title>Skillsail Blogs</title>
         <meta name="description" content="Explore the latest blogs from Skillsail." />

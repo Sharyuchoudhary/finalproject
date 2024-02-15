@@ -52,20 +52,21 @@ const FavCoursePage = ({ name }) => {
   }
 
   return (
-    <div className={s.maindiv}>
+    <div className={s.maindivv}>
       <Head>
         <title>{name} Favorite Courses - Skillsail</title>
         <meta name="description" content={`Explore and manage your favorite courses on Skillsail. View course details and remove courses from your favorites.`} />
       </Head>
 
-      <div className={s.h}>
-        <h1>Your Favorite Courses</h1>
+      <div className={s.hh}>
+        <h1> LIKED COURSES</h1>
         <hr/>
         <Link href="/courses">
-          <Image className={s.i} src={"/hh.png"} width={30} height={30} alt='back to courses' />
+          <Image className={s.ii} src={"/hh.png"} width={30} height={30} alt='back to courses' />
         </Link> 
       </div>
 
+<div className={s.cdivv}>
       {favCourses.map((course) => (
         <div className={s.cdiv} key={course._id}>
           <div className={s.cn}>
@@ -85,6 +86,10 @@ const FavCoursePage = ({ name }) => {
           </div>
         </div>
       ))}
+
+</div>
+
+
     </div>
   );
 };

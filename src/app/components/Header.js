@@ -40,7 +40,7 @@ export default function Header() {
       const response = await fetch('/api/users/logout', { method: 'GET' });
 
       if (response.status === 200) {
-        window.location.href = '/LOGIN';
+        window.location.href = '/';
         console.log('Success Logout!');
       } else {
         console.log('BAD RESPONSE logout ROUTE!');
@@ -62,10 +62,10 @@ export default function Header() {
 
       <nav className={styles.nav}>
         <ul className={styles.navList}>
-          {!isadmin && <li><Link href="/courses">COURSES</Link></li>}
-          {!isadmin && <li><Link href="/blog">BLOGS</Link></li>}
-          {isadmin ? <li><Link href="/paneladmin">PANEL</Link></li> : <li><Link href="/contacts">CONTACT US</Link></li>}
-
+          {!isadmin && <li><Link  className={styles.navbut} href="/courses">COURSES</Link></li>}
+          {!isadmin && <li><Link className={styles.navbut} href="/blog">BLOGS</Link></li>}
+          {isadmin ? <li><Link href="/paneladmin">PANEL</Link></li> : null }
+ 
           {isadmin ? (
             <li className={styles.dropdown}>
               <button className={styles.dropbtn}>ADMIN</button>
@@ -78,8 +78,8 @@ export default function Header() {
               <button className={styles.dropbtn}>PROFILE</button>
               <div className={styles.dropdownContent}>
                 <Link href="/profiledashboard">View Profile</Link>
-                <Link href="/yourcourses">Your Courses</Link>
-                <Link href="/favcourse">Favorite Courses</Link>
+                <Link href="/yourcourses">Cart</Link>
+                <Link href="/favcourse">Liked Courses</Link>
                 <Link href="" onClick={handlelogout}>Logout</Link>
               </div>
             </li>

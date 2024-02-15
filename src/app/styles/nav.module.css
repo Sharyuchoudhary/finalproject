@@ -1,10 +1,13 @@
 .nav {
-  background-color: #f4f4f4; /* Background color */
+  background-color: #defbff; /* Background color */
   display: flex;
   justify-content: center; /* Center align items horizontally */
   padding: 30px 0px; /* Add some vertical padding for spacing */
-  border-radius: 100px;
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+
 }
 
 .navList {
@@ -20,7 +23,7 @@
   font-size: 16px;
 }
 
-.nav a {
+.nav a {  
   text-decoration: none;
   color: #000;
 }
@@ -36,11 +39,7 @@
 
 
 
-/* nav.module.css */
 
-.nav {
-  /* Your main navigation styles */
-}
 
 .navList {
   /* Your navigation list styles */
@@ -60,21 +59,26 @@
 }
 
 .dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
+  padding: 15px;
+  background-color: inherit;
+  border:solid 2px #ffffff;
+border-radius: 20px;
   cursor: pointer;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+  font-size: 15px;
 }
 
 .dropdownContent {
+ margin-top: 1px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
+border-radius: 20px;
+text-align: center
 }
 
 .dropdownContent a {
@@ -90,4 +94,22 @@
 
 .dropdown:hover .dropdownContent {
   display: block;
+}
+
+
+
+
+
+
+
+.navbut
+{
+
+padding: 15px;
+  background-color: inherit;
+  border:solid 2px #ffffff;
+border-radius: 20px;
+margin: 5px;
+
+
 }

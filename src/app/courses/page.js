@@ -116,29 +116,11 @@ const response = await fetch('/api/users/atfav' ,
 
  
   
-  const settings = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: true,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000, // Adjust the speed in milliseconds
-  };
-
-  const settings1 = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000, // Adjust the speed in milliseconds
-  };
-  
   
   return (
-    <div>
+    <div className={s.mdiv}>
 
-<div className={s.head}> <Welcomeuser username={name} /></div>
+<div className={s.head}> <Welcomeuser username={name} className={s.div}/></div>
       
 
 <div className={s.maindiv} >
@@ -157,10 +139,7 @@ return <div className={s.cdiv} key={course._id}>
             <p>DURATION</p>
             <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
             <p>{course.subDescription}</p>
-            <hr/>
-            <p>Instructor: {course.instructor}</p>
-            <p>Price: {course.price}</p>
-
+            <hr/>       
       
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -204,9 +183,7 @@ return <div className={s.cdiv} key={course._id}>
           <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
           <p>{course.subDescription}</p>
           <hr/>
-          <p>Instructor: {course.instructor}</p>
-          <p>Price: {course.price}</p>
-    
+         
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
 <div className={s.del}> 
@@ -250,8 +227,7 @@ return <div className={s.cdiv} key={course._id}>
           <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
           <p>{course.subDescription}</p>
           <hr/>
-          <p>Instructor: {course.instructor}</p>
-          <p>Price: {course.price}</p>
+         
     
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -294,8 +270,7 @@ return <div className={s.cdiv} key={course._id}>
           <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
           <p>{course.subDescription}</p>
           <hr/>
-          <p>Instructor: {course.instructor}</p>
-          <p>Price: {course.price}</p>
+       
     
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
@@ -345,9 +320,7 @@ return <div className={s.cdiv} key={course._id}>
           <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
           <p>{course.subDescription}</p>
           <hr/>
-          <p>Instructor: {course.instructor}</p>
-          <p>Price: {course.price}</p>
-    
+       
 <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
 
 <div className={s.del}> 

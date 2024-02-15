@@ -1,14 +1,43 @@
+.head{
+
+margin: 0px;
+height: 100vh;
+
+background-image: url("/ss4.jpg");
+background-repeat: no-repeat; 
+background-size: 100%;
+height: 100vh;
+margin: 5px;
+padding-top: 0px;
+border-radius: 20px;
+
+color: rgb(0, 0, 0);
+display: flex;
+justify-content: center;
+align-items: center;
+
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 20px;
+
+}
+
+
+
 /* Styles for main container */
 .maindiv {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
 
 /* Styles for header */
 .h {
+  text-align: center;
   margin-bottom: 20px;
+  margin-right: 1000px;
 }
 
 /* Heading styles */
@@ -32,6 +61,8 @@
 
 /* Styles for delete icon */
 .del {
+  margin-top: 15px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
@@ -41,8 +72,13 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   width: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
 }
 
 /* Styles for course details */
@@ -70,4 +106,150 @@
   background-color: #3498db;
   color: #ffffff;
   border-color: #ffffff;
+}
+
+
+.ssdiv
+{
+
+
+
+
+
+
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+
+
+
+}
+
+.hh
+{
+
+display: flex;
+justify-content: center;
+align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  flex-direction: column;
+}
+
+
+.maindivv {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: url("/ss4.jpg");
+   background-repeat: no-repeat; 
+  background-size: 300%;
+height: 100%;
+margin: 0px;
+ 
+}
+
+.cdivv
+{
+  display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+flex-wrap: wrap;
+
+}
+
+.cnn {
+margin-top: 40px;
+margin-bottom: 30px;
+height: 150px;
+width: 300px;
+background-color: inherit;
+border:solid 3px #ffffff;
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+border-radius: 30px;
+
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: larger;
+color: rgb(47, 39, 39);
+}
+
+.butt {
+  
+  background-color: inherit;
+  border: solid 3px #ffffff;
+  border-radius: 30px;
+  height: 50px;
+  width: 150px;
+  color: #000000;
+  transition: all 0.5s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0px;
+  
+}
+
+
+
+
+.butt:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+}
+
+
+
+
+.ccdiv {
+
+  background-color: inherit;
+  border: solid 3px #ffffff;
+  border-radius: 30px;
+
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 280px;
+  height: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+
+
+}
+
+.ccdiv1 {
+  width: 350px;
+  height: 350px;
+  background-color: inherit;
+  border: solid 3px #ffffff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
 }
