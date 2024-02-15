@@ -54,6 +54,10 @@
             default: [],  // Default value is an empty array
           },
 
+          Boughtcourses: {
+            type: [mongoose.Schema.Types.ObjectId],  // Array of ObjectIds
+            default: [],  // Default value is an empty array
+          },
 
 
 

@@ -16,13 +16,11 @@ const id = await getdatafromtoken(request) ;
 const user = await User.findOne({_id:id})
 
 const condition =await user.clickedIds.includes(value)
-console.log(condition);
+
 
 if(!condition){
 
     user.clickedIds.push(value);
-    console.log(condition);
-    console.log(value);
     await user.save();
     return NextResponse.json({msg : "SUCCESS ATFAV"})
 

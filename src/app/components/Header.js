@@ -16,7 +16,7 @@ export default function Header() {
 
       if (response.ok) {
         const responsedata = await response.json();
-        console.log("the response data is", responsedata);
+      
 
         const { user } = responsedata;
 

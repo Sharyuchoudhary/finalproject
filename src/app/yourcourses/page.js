@@ -24,9 +24,14 @@ const [bill , setbill] = useState(0)
 
       if (response.ok) {
         const data = await response.json();
-     
+console.log(data);
+const {favoriteCourses} = data 
+
+
+   
       setbill(data.total)
-        setFavCourses(data.favoriteCourses); // Update state with favoriteCourses
+        setFavCourses(favoriteCourses); // Update state with favoriteCourses
+      
       } else {
         console.error('Failed to fetch data');
       }
@@ -37,6 +42,7 @@ const [bill , setbill] = useState(0)
 
   useEffect(() => {
     fetchData();
+
   }, []);
 
   async function deleteFavCourse(id) {
@@ -117,7 +123,6 @@ try {
 
   const responseData = await response.json();
 let redirect = responseData.data.instrumentResponse.redirectInfo.url
-
 
 router.push(redirect)
 
