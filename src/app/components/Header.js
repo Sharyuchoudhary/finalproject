@@ -22,8 +22,9 @@ export default function Header() {
       
 
         const { user } = responsedata;
+        console.log(user);
 
-        if (user.isVerified === true) {
+        if (user.isAdmin === true) {
           setisadmin(true);
         }
       } else {
