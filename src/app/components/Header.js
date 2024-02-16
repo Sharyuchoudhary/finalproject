@@ -44,7 +44,10 @@ export default function Header() {
       const response = await fetch('/api/users/logout', { method: 'GET' });
 
       if (response.status === 200) {
-       router.push("/")
+        try{router.push("/") }
+       catch(error){
+         console.log("error" , error)
+       } 
         console.log('Success Logout!');
       } else {
         console.log('BAD RESPONSE logout ROUTE!');
