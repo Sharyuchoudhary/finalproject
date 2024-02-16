@@ -22,7 +22,7 @@ export default function Header() {
       
 
         const { user } = responsedata;
-        console.log(user);
+       
 
         if (user.isAdmin === true) {
           setisadmin(true);
